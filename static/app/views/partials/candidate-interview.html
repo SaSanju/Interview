@@ -1,0 +1,36 @@
+<div class="row" ng-if="!isVerified">
+    <div class="col-md-4 col-md-offset-4">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Verify email</div>
+            <div class="panel-body">
+                <form ng-submit="verifyInvitation(email)">
+                    <div class="form-group">
+                        <input class="form-control" type="email" name="email" ng-model="email" placeholder="Enter Email" required/>
+                    </div>
+                    <button type="submit" class="btn">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row question-container" ng-if="isVerified && problems && problems.length">
+    <div class="question-wrapper" ng-repeat="problem in problems track by $index">
+        <div class="question">
+            {{problem.question}}
+        </div>
+        <div class="choices-wrapper row">
+            <div class="choice col-md-6" ng-repeat="choice in problem.choices track by $index">
+                <input id="choices-{{$parent.$index}}-{{$index}}" type="radio" name="choices{{$parent.$index}}-{{$index}}" value="{{choice.no}}" ng-model="problem.choosen">
+                <label for="choices-{{$parent.$index}}-{{$index}}">{{choice.choice}}</label>
+            </div>
+        </div>
+    </div>
+    <div class="submission">
+        <button class="btn btn-success full-width" ng-click="submitAnswers()">Submit Answers</button>
+    </div>
+</div>
+
+<div class="row" ng-if="score">
+    <h1>YOUR SCORE: {{score}}</h1>
+</div>
+

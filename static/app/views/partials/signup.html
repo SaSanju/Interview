@@ -1,0 +1,13 @@
+<form role="form" name="signup-form" ng-submit="signUp(userName, password, confirmPassword)">
+	<div class="form-group">
+		<input type="text" class="form-control" placeholder="name" name="userName" ng-model="userName" required>
+	</div>
+	<div class="form-group">
+		<input type="password" class="form-control" placeholder="password" name="password" ng-model="password" required>
+	</div>
+	<div class="form-group">
+		<input type="password" class="form-control" placeholder="confirm password" name="confirm-password" ng-model="confirmPassword" required>
+	<span>{{error}}</span>
+	</div>
+		<button class="btn btn-success" type="submit">Submit</button>
+</form>

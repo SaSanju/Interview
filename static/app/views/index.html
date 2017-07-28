@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+	<title>Ekluv App</title>
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script type="text/javascript"  src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular-route.min.js"></script>
+<script type="text/javascript"  src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
+<script type="text/javascript" src="/static/app/app.js"></script>
+<script type="text/javascript" src="/static/app/app.routes.js"></script>
+
+<script type="text/javascript" src="/static/app/services/authInterceptor.js"></script>
+<script type="text/javascript" src="/static/app/services/authService.js"></script>
+<script type="text/javascript" src="/static/app/services/authToken.js"></script>
+<script type="text/javascript" src="/static/app/controllers/mainCtrl.js"></script>
+<link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+</head>
+<base href="/">
+<body>
+
+<div ng-controller="mainCtrl">
+	<nav class="navbar navbar-inverse">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="/">Portal</a>
+	    </div>
+	    <ul class="nav navbar-nav navbar-right">
+	      <li class="active"><a href="/">Home</a></li>
+	      <li ng-if="!isLoggedIn"><a href="/login">Login</a></li>
+	      <li ng-if="isLoggedIn"><a href="">{{user.userName}}</a></li> 
+	      <li ng-if="isLoggedIn" ng-click="logout()"><a href="#">Logout</a></li> 
+	    </ul>
+	  </div>
+	</nav>
+</div>
+
+<div class="container">
+	<div ng-view></div>
+</div>
+<!-- Latest compiled and minified JavaScript -->
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script> -->
+</body>
+</html>
