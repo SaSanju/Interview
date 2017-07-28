@@ -9,4 +9,4 @@ Download the .zip file. Extract the contents of the zip file, then open your ter
     > nodemon server.js
 
 
-Admin Login credentials - http://localhost:3000/signup
+check url to sign up - http://localhost:3000/signup
