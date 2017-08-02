@@ -1,5 +1,5 @@
 {
-  "name": "angularhuman",
+  "name": "interview",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "author": "Theo <theoanderson3@gmail.com> (linkedin.com/in/andersontr15)",
+  "author": "Interview Expert",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.2",
@@ -20,5 +20,8 @@
     "jsonwebtoken": "^7.0.0",
     "nodemailer": "^4.0.1",
     "uuid": "^3.1.0"
+  },
+  "devDependencies": {
+    "node-inspector": "^0.12.8"
   }
 }

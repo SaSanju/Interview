@@ -87,7 +87,6 @@ angular.module('myapp')
             invitationToken,
             email
         };
-        console.log(params);
         var deferred = $q.defer();
         $http.post('/api/verify-invitation/', params).then((response) =>{
             deferred.resolve(response.data);

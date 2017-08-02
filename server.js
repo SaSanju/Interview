@@ -8,7 +8,7 @@ var path = require('path');
 var config = require('./config');
 var morgan = require('morgan');
 var app = express();
-// app.use(morgan('dev'));
+app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 // app.use('/', mainRouter);
