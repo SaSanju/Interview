@@ -1,0 +1,32 @@
+<div class="row">
+	<div class="col-md-4 col-md-offset-4">
+		<div class="panel panel-primary">
+			<div class="panel-heading">Invite Candidates</div>
+			<div class="panel-body">
+				<form ng-submit="inviteCandidate()">
+                <div class="form-group">
+					<input class="form-control" type="email" name="inviteEmail" ng-model="inviteEmail" placeholder="Enter Candidate Email" required/>
+                </div>
+					<button type="submit" class="btn">Submit</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>Opened</th>
+            <th>Score</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="invite in invites track by $index">
+            <td ng-class="{ 'success' : invite.isOpened == true }">{{invite.email}}</td>
+            <td ng-class="{ 'success' : invite.isOpened == true }">{{invite.isOpened}}</td>
+            <td ng-class="{ 'success' : invite.isOpened == true }">{{invite.score}}</td>
+        </tr>
+    </tbody>
+</table>
