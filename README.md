@@ -9,6 +9,8 @@ Download the .zip file. Extract the contents of the zip file, then open your ter
     > nodemon server.js
 
 
-check url to sign up - http://localhost:3000/signup
+1. check url to sign up as Admin - http://localhost:3000/signup
 
-first sign up and then expect an invitation link for quiz
+2. provide valid emails in config.js for invitation emails
+
+3. send an invitation link for quiz from admin dashboard 

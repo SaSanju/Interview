@@ -43,9 +43,10 @@ function sessionTokenMiddleWare(req, res, next) {
     });
 }
 
+// Admin signup API
 router.post('/signup', (req, res) => {
     var user = new User(req.body);
-    console.log(User);
+    user.isAdmin = true;
 
     user.save(function (err) {
         console.log(err);
@@ -74,19 +75,6 @@ router.post('/problem', (req, res) => {
             });
         });
 });
-
-
-function onlyAdmin() {
-    return function (req, res, next) {
-        if (req.decoded.isAdmin) {
-            next();
-        } else {
-            res.status(403).json({
-                message: 'only Admin permitted'
-            });
-        }
-    };
-}
 
 // Login API
 router.post('/login', (req, res) => {
